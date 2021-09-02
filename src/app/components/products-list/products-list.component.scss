@@ -1,0 +1,15 @@
+@import 'src/_variables.scss';
+
+.list {
+    &__heading {
+        font-size: 16px;
+        color: $color-primary;
+    }
+}
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}

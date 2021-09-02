@@ -1,0 +1,17 @@
+// @import "../node_modules/bootstrap/scss/functions";
+
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/mixins";
+
+@import 'src/_variables.scss';
+
+body {
+    // font-family: 'Open Sans', sans-serif !important;
+    font-size: 14px !important;
+}
+
+.form-control,
+.btn,
+.form-select {
+    box-shadow: none !important;
+}

@@ -1,0 +1,19 @@
+@import 'src/_variables.scss';
+
+.about {
+    &__heading {
+        font-size: 16px;
+        color: $color-primary;
+    }
+    
+    &__range {
+        border-left: 1px solid $color-border;
+        font-size: 12px;
+    }
+}
+
+.emergency {
+    &__feedback {
+        color: $color-green;
+    }
+}

@@ -1,0 +1,53 @@
+<h2 class="about__heading pb-2 border-bottom border-2">Tell Us About Your Project</h2>
+      
+<label for="location" class="mb-1">Location</label>
+<form>
+    <div class="row">
+        <div class="col-10 d-xl-flex">
+        <input type="text" class="form-control" id="location">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Select</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        </div>
+        <div class="col-2 p-0">
+        <button type="submit" class="btn btn-primary">S</button>
+        </div>
+    </div>
+</form>
+
+<div class="form-group pt-3">
+    <label for="heaterSize" class="mb-1">Size your water heater</label>
+    <div class="d-flex justify-content-around border rounded">
+        <input type="range" min="0" max="100" class="form-control-range d-block flex-grow-1 m-1" id="heaterSize">
+        <div class="flex-grow-1 text-center bg-light p-1 about__range">50 Gallons <br> (2-4 people)</div>
+    </div>
+</div>
+
+<div class="form-group pt-3">
+    <label for="fuelType" class="mb-1">What is your current hot water fuel type?</label>
+    <select class="form-select w-75" aria-label="Fuel Type" id="fuelType">
+        <option selected>Select</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+</div>
+
+<div class="form-group pt-3">
+    <label for="isEmergency" class="mb-1">Is this a water heater emergency?</label>
+    <div class="btn-group d-block" role="group" aria-label="Is heater emergency">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-primary w-50" for="btnradio1">Yes</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-primary w-50" for="btnradio2">No</label>
+    </div>
+</div>
+<div class="emergency__feedback mt-2" *ngIf="true">
+    <p>Got it! We will submit to our partner your need for immediate help.</p>
+</div>
+
+<hr style="height: 2px;">
