@@ -7,9 +7,18 @@
     }
 }
 
-
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
+}
+
+.more-options-btn {
+    color: $color-link;
+    border: 1px solid $color-link;
+
+    &:hover {
+        color: $color-link-hover;
+        background-color: $color-background-light;
+    }
 }

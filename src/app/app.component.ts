@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../app/services/data.service';
+import { Router } from '@angular/router';
+import { DataService } from '@app/services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,30 @@ import { DataService } from '../app/services/data.service';
 })
 export class AppComponent implements OnInit {
 
+  productsList: any;
+  filteredList: any;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, public router: Router) {}
 
   
   ngOnInit(){
-    // this.dataService.getAllData().subscribe(response => {
-    //   console.log(response);
-    //   // this.users = response;
-    // })
+    this.dataService.getAllData().subscribe(response => {
+      this.productsList = response.data.quotes.product_quotes;
+      this.filterList(50);
+    })
+
+    this.router.navigate(['process']);
+  }
+
+
+  filterList(size) {
+    this.filteredList = this.productsList.filter(product => product.volume >= size);
+  }
+
+
+  setSizeAndFilter(event) {
+    if(event)
+      this.filterList(event);
   }
   
 }

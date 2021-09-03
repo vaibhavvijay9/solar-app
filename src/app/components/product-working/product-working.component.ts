@@ -8,14 +8,14 @@ declare var $: any;
 })
 export class ProductWorkingComponent implements OnInit {
 
-  activeTabName: string = 'Process';
+  routeInfo: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.routeInfo = [
+      {tabName: 'Process', tabLink: 'process', isActive: true}
+    ]
   }
 
-  changeTab(tabName){
-    this.activeTabName = tabName;
-  }
 }

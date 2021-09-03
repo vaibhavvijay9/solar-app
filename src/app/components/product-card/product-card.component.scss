@@ -1,0 +1,62 @@
+@import 'src/_variables.scss';
+
+.card {
+    &__header {
+        background-color: $color-black;
+        color: $color-white;
+    }
+}
+
+.product {
+    background-color: $color-white;
+    &__manufacturer-name {
+        font-size: 20px;
+    }
+}
+
+.highlight-list {
+    list-style: none;
+    list-style-image: url('/assets/list-image-circle.svg');
+}
+
+.base-price{
+    font-size: 16px;
+    color: $color-font;
+    font-weight: 600;
+}
+
+.sub-text {
+    font-size: 12px;
+    color: $color-font;
+}
+
+.tax-price {
+    color: $color-font;
+}
+
+.equipment-cost {
+    font-size: 16px;
+    font-weight: 600;
+
+    &__amount {
+        color: $color-secondary;
+    }
+}
+
+.annual-saving {
+    border: 2px solid $color-green;
+    font-size: 13px;
+    &__amount {
+        color: $color-green;
+    }
+}
+
+.white-font {
+    color: $color-white;
+}
+
+.view-more {
+    color: $color-link;
+    font-size: 12px;
+    background-color: #e4e3e3;
+}

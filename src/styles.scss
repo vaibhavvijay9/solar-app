@@ -4,6 +4,13 @@
 // @import "../node_modules/bootstrap/scss/mixins";
 
 @import 'src/_variables.scss';
+// Your variable overrides
+$theme-colors: (
+  "primary": ($color-secondary)
+);
+
+// Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 body {
     // font-family: 'Open Sans', sans-serif !important;
@@ -14,4 +21,8 @@ body {
 .btn,
 .form-select {
     box-shadow: none !important;
+}
+
+hr {
+  height: 2px !important;
 }

@@ -1,53 +1,53 @@
 <h2 class="about__heading pb-2 border-bottom border-2">Tell Us About Your Project</h2>
       
 <label for="location" class="mb-1">Location</label>
-<form>
-    <div class="row">
-        <div class="col-10 d-xl-flex">
-        <input type="text" class="form-control" id="location">
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Select</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select>
-        </div>
-        <div class="col-2 p-0">
-        <button type="submit" class="btn btn-primary">S</button>
-        </div>
+<div class="row">
+    <div class="col-10 d-xl-flex">
+    <input type="text" class="form-control rounded-0 rounded-start" id="location" placeholder="City">
+    <select class="form-select rounded-0 rounded-end" aria-label="Default select example">
+        <option>Select</option>
+        <option value="1" selected>Family</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
     </div>
-</form>
+    <div class="col-2 p-0">
+    <button type="submit" class="btn btn-primary">
+        <img src="assets/search-bar.svg" alt="search" width="20px">
+    </button>
+    </div>
+</div>
 
 <div class="form-group pt-3">
     <label for="heaterSize" class="mb-1">Size your water heater</label>
     <div class="d-flex justify-content-around border rounded">
-        <input type="range" min="0" max="100" class="form-control-range d-block flex-grow-1 m-1" id="heaterSize">
-        <div class="flex-grow-1 text-center bg-light p-1 about__range">50 Gallons <br> (2-4 people)</div>
+        <input type="range" min="30" max="80" name="heaterSize" [(ngModel)]="heaterSize" (ngModelChange)="this.sizeFilter.next($event)" class="form-control-range d-block flex-grow-1 m-1" id="heaterSize">
+        <div class="flex-grow-1 text-center bg-light p-1 about__range">{{heaterSize}} Gallons <br> (2-4 people)</div>
     </div>
 </div>
 
 <div class="form-group pt-3">
     <label for="fuelType" class="mb-1">What is your current hot water fuel type?</label>
     <select class="form-select w-75" aria-label="Fuel Type" id="fuelType">
-        <option selected>Select</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option>Select</option>
+        <option value="1" selected>Natural Gas</option>
+        <option value="2">Petrol</option>
+        <option value="3">Diesel</option>
     </select>
 </div>
 
 <div class="form-group pt-3">
     <label for="isEmergency" class="mb-1">Is this a water heater emergency?</label>
     <div class="btn-group d-block" role="group" aria-label="Is heater emergency">
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-        <label class="btn btn-outline-primary w-50" for="btnradio1">Yes</label>
+        <input type="radio" class="btn-check" name="isEmergency" value="1" [(ngModel)]="isEmergency" id="1" autocomplete="off">
+        <label class="btn btn-outline-primary w-50" for="1" [class.active-tab]="isEmergency == 1">Yes</label>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-        <label class="btn btn-outline-primary w-50" for="btnradio2">No</label>
+        <input type="radio" class="btn-check" name="isEmergency" value="2" [(ngModel)]="isEmergency" id="2" autocomplete="off">
+        <label class="btn btn-outline-primary w-50" for="2" [class.active-tab]="isEmergency == 2">No</label>
     </div>
 </div>
-<div class="emergency__feedback mt-2" *ngIf="true">
+<div class="emergency__feedback mt-2" *ngIf="isEmergency == 1">
     <p>Got it! We will submit to our partner your need for immediate help.</p>
 </div>
 
-<hr style="height: 2px;">
+<hr>

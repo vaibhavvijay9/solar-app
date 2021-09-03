@@ -17,3 +17,9 @@
         color: $color-green;
     }
 }
+
+.active-tab {
+    color: $color-white !important;
+    background-color: $color-secondary !important;
+    border-color: $color-secondary !important;
+}

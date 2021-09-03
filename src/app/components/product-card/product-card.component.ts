@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'product-card',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
 
+  @Input() productItem: any;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+
+  openDetailsModal(item){
+    
   }
 
 }

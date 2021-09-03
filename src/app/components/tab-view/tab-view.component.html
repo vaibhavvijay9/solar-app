@@ -1,0 +1,9 @@
+<div class="shadow-sm bg-white py-3 px-5">
+    <nav class="nav mb-3 border-bottom border-2">
+        <ng-container *ngFor="let route of routeInfo">
+            <a [routerLink]="route.tabLink" class="nav-link" [class.active]="activeTabName === route.tabName || route.isActive" (click)="changeTab(route.tabName)">{{route.tabName}}</a>
+        </ng-container>
+    </nav>
+
+    <router-outlet></router-outlet>
+</div>

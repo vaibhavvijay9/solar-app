@@ -1,10 +1,16 @@
-<section class="list">
+<section class="list mt-3">
     <h1 class="list__heading pb-2 border-bottom border-2">Your Hybrid Electric Water Heater Recommended Options</h1>
 
-    <div class="card-container my-3">
-        <product-card></product-card>
-        <product-card></product-card>
-        <product-card></product-card>
+    <div class="card-container my-3" *ngIf="productsList && productsList.length > 0; else elseBlock">
+        <ng-container *ngFor="let product of productsList  | slice:0:limit">
+            <product-card [productItem]="product"></product-card>
+        </ng-container>
     </div>
+
+    <ng-template #elseBlock>
+        <p class="text-center p-4 fs-3">No products found.</p>
+    </ng-template>
     
+    <button *ngIf="isMoreAvailable" type="button" (click)="showMoreOptions()" class="btn mb-4 py-1 more-options-btn">{{buttonLabel}}</button>
+
 </section>
