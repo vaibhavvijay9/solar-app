@@ -26,5 +26,4 @@ Please visit [https://solar-assignment.netlify.app/](https://solar-assignment.ne
 
 - Use ngRx for state management (instead of passing similar data between components)
 - Configure bootstrap (variables, colors, font size, etc.)
-- Improve design implementation
 
