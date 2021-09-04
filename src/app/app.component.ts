@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
 
   productsList: any;
   filteredList: any;
+  isInitial: boolean = true;
 
   @ViewChild('productsListRef') productsListRef;
 
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit {
     this.dataService.getAllData().subscribe(response => {
       this.productsList = response.data.quotes.product_quotes;
       this.filterList(50);
+      this.isInitial = false;
     })
 
     this.router.navigate(['process']);
@@ -30,7 +32,7 @@ export class AppComponent implements OnInit {
   filterList(size) {
     this.filteredList = this.dataService.getFilteredList(size);
 
-    if(this.productsListRef)
+    if(this.productsListRef && !this.isInitial)
       this.productsListRef.nativeElement.scrollIntoView();  // scroll to list on Size slider change  (see effect on mobile)
   }
 
