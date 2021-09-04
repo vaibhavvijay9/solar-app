@@ -5,13 +5,13 @@
       <project-form (sendSizeValue)="setSizeAndFilter($event)"></project-form>
     </aside>
 
-    <main class="col-md-9 p-4 main-content position-relative">
+    <main #productsListRef class="col-md-9 p-4 main-content position-relative">
       <div class="position-absolute top-0 start-0 w-100 text-center p-1 bg-primary incentive-info">
         <img class="me-1" src="assets/searching-applicable-rebates-and-incentives.svg" alt="incentive" width="18" height="18">
         Your Project qualifies you for <span class="fw-bold">incentives!</span>
       </div>
 
-      <div #productsListRef>
+      <div>
         <products-list class="mb-2" [productsList]="filteredList"></products-list>
       </div>
       
