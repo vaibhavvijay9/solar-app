@@ -1,0 +1,70 @@
+@import 'src/_variables.scss';
+
+.detail-modal {
+    background-color: $color-background;;
+}
+
+.img-preview {
+    width: 65px;
+    height: 65px;
+}
+
+.product-name {
+    color: $color-font;
+    font-size: 16px;
+}
+
+.product-code {
+    color: $color-primary;
+    font-size: 12px;
+}
+
+.rule {
+    width: 50px;
+}
+
+.base-price {
+    font-size: 22px;
+    color: $color-font;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 40%;
+        right: 0;
+        border-top: 2px solid $color-alert;
+        transform: rotate(-20deg);
+        
+        -webkit-transform:rotate(-20deg);
+        -moz-transform:rotate(-20deg);
+        -ms-transform:rotate(-20deg);
+        -o-transform:rotate(-20deg);
+        transform:rotate(-20deg);
+    }
+}
+
+.vertical-line {
+    border-left: 2px solid $color-font;
+    height: 50px !important;
+    width: 2px;
+}
+
+.actual-price {
+    font-size: 22px;
+    color: $color-primary;
+}
+
+.note {
+    font-size: 10px;
+    color: $color-font;
+}
+
+.white-font {
+    color: $color-white;
+}
+
+.button-text {
+    font-size: 12px;
+}

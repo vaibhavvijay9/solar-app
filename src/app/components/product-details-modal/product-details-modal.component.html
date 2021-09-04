@@ -1,0 +1,75 @@
+<div class="modal fade" data-bs-backdrop="static" id="productDetailsModal" tabindex="-1" aria-labelledby="productDetailsModal" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content detail-modal">
+        <div class="modal-body">
+            <div class="d-flex justify-content-between flex-column-reverse flex-xl-row">
+                <p class="mt-3 mt-xl-0 mb-0">Heat Pump Electric Water Heater > <span class="fw-bold">{{selectedProduct.name}}</span></p>
+                <div>
+                    <button type="button" (click)="navigate('PREV')" [disabled]="isFirst" class="btn p-0 border bg-white pe-2 border-end-0 rounded-0">
+                        <span class="fw-bold btn-primary p-1 px-2 white-font rounded-start">&lt;</span>
+                        Previous
+                    </button>
+                    <button type="button" (click)="navigate('NEXT')" [disabled]="isLast" class="btn p-0 border bg-white ps-2 rounded-0">
+                        Next
+                        <span class="fw-bold btn-primary p-1 px-2 white-font rounded-end">&gt;</span>
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <div class="row px-xl-5 px-0 my-3">
+                    <div class="col-xl-5 text-center d-flex mb-4 mb-xl-0">
+                        <div>
+                            <div class="bg-white rounded me-3 mb-3 img-preview"></div>
+                            <div class="bg-white rounded me-3 mb-3 img-preview"></div>
+                            <div class="bg-white rounded me-3 mb-3 img-preview"></div>
+                        </div>
+                        <div class="w-75 p-2 bg-white rounded">
+                            <img src="assets/img2.png" alt="Heater" width="100px" height="250px">
+                        </div>
+                    </div>
+                    <div class="col-xl-7">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h2 class="mb-0">{{selectedProduct.manufacturer_name}}</h2>
+                                <p class="product-name fw-bold mb-0">{{selectedProduct.name}}</p>
+                                <span class="product-code fw-bold">XET1065HD50U1</span>
+                                <hr class="m-0 rule">
+                                <ul class="ps-3 mt-2">
+                                    <li *ngFor="let highlight of selectedProduct.detail_highlight">{{highlight}}</li>
+                                </ul>
+                                <div class="d-flex">
+                                    <label for="basePrice" class="fw-bold base-price p-2">
+                                        <sup>$</sup>
+                                        <span>{{selectedProduct.base_price | number}}</span>
+                                        <sup>00</sup>
+                                    </label>
+                                    <hr class="vertical-line m-0 my-2 mx-2">
+                                    <label for="actualPrice" class="fw-bold actual-price p-2">
+                                        <sup>$</sup>
+                                        <span>{{selectedProduct.netCost | number}}</span>
+                                        <sup>00</sup>
+                                        <span class="note fw-normal d-block">*With all incentives applied</span>
+                                    </label>
+                                </div>
+
+                                <div class="my-2">
+                                    <button type="button" class="btn btn-primary white-font button-text">Get Install Quote</button>
+                                    <button type="button" class="btn btn-link text-decoration-none button-text" data-bs-dismiss="modal" (click)="modalClosed()">Back to Results</button>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="assets/Energy_Star_logo.svg.png" alt="Energy Star logo" width="50px" height="40px">
+                                <span class="d-block">3.4 of <img src="assets/info-tooltip.svg" alt="Info Icon"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-xl-5 px-0" *ngIf="selectedProduct">
+                    <tab-view [routeInfo]="routeInfo"></tab-view>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 
 
   filterList(size) {
-    this.filteredList = this.productsList.filter(product => product.volume >= size);
+    this.filteredList = this.dataService.getFilteredList(size);
   }
 
 

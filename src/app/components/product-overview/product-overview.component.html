@@ -1,0 +1,56 @@
+<p>Product Overview</p>
+<div class="row">
+    <div class="col-xl-8 border-end">
+        <div class="highlights-grid">
+            <div class="grid-item border rounded" *ngFor="let highlight of selectedProduct.product_bullet_block">
+                <p class="grid-item__title p-2 mb-0 d-flex align-items-center">
+                    <img src="assets/right-check.svg" alt="check icon" >
+                    <label class="text-truncate" title="{{highlight.product_bullet}}">{{highlight.product_bullet}}</label>
+                </p>
+                <p class="grid-item__content p-2 mb-0">{{highlight.product_block}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4">
+        <div class="pricing-section mt-4 mt-xl-0">
+            <div class="base-price d-flex justify-content-between">
+              <span>Base Price</span>
+              <span class="fw-normal"> ------------------------ </span>
+              <span>{{selectedProduct.base_price | currency}}</span>
+            </div>
+            <p class="sub-text mb-0">(Installation not included)</p>
+            
+            <div class="tax-price ms-3 d-flex justify-content-between">
+              <span>
+                Federal Tax Credit
+                <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
+              </span>
+              <span class="fw-normal"> ----------- </span>
+              <span>{{'-300' | currency}}</span>
+            </div>
+            
+            <div class="tax-price ms-3 d-flex justify-content-between">
+              <span>
+                Utility Incentives
+                <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
+              </span>
+              <span class="fw-normal"> ------------ </span>
+              <span>{{'-1000' | currency}}</span>
+            </div>
+            
+            <div class="equipment-cost d-flex justify-content-between">
+              <span>
+                Equipment Cost
+                <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
+              </span>
+              <span class="fw-normal"> ---------- </span>
+              <span class="equipment-cost__amount">{{selectedProduct.netCost | currency}}</span>
+            </div>
+    
+            <div class="annual-saving my-3 p-2 rounded">
+              Your Estimated Annual Savings is 
+              <span class="annual-saving__amount fw-bold">{{selectedProduct.est_annual_savings_cal | currency}}.</span>
+            </div>
+        </div>
+    </div>
+</div>

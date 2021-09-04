@@ -1,0 +1,50 @@
+@import 'src/_variables.scss';
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.grid-item {
+    &__title {
+        background-color: $color-primary;
+        color: $color-background;
+    }
+}
+
+.base-price{
+    font-size: 16px;
+    color: $color-font;
+    font-weight: 600;
+}
+
+.sub-text {
+    font-size: 12px;
+    color: $color-font;
+}
+
+.tax-price {
+    color: $color-font;
+}
+
+.equipment-cost {
+    font-size: 16px;
+    font-weight: 600;
+
+    &__amount {
+        color: $color-secondary;
+    }
+}
+
+.annual-saving {
+    border: 2px solid $color-green;
+    font-size: 13px;
+    &__amount {
+        color: $color-green;
+    }
+}
+
+.white-font {
+    color: $color-white;
+}

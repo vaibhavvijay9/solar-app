@@ -8,15 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TabViewComponent implements OnInit {
 
   @Input() routeInfo: any;
-  activeTabName: any;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
-  changeTab(tabName){
-    this.activeTabName = tabName;
-  }
+  ngOnInit(): void { }
 
 }

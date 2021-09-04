@@ -1,7 +1,7 @@
-<div class="shadow-sm bg-white py-3 px-5">
-    <nav class="nav mb-3 border-bottom border-2">
+<div class="shadow-sm bg-white py-3 px-3 px-xl-5">
+    <nav class="d-flex text-nowrap overflow-auto mb-3 border-bottom">
         <ng-container *ngFor="let route of routeInfo">
-            <a [routerLink]="route.tabLink" class="nav-link" [class.active]="activeTabName === route.tabName || route.isActive" (click)="changeTab(route.tabName)">{{route.tabName}}</a>
+            <a [routerLink]="route.tabLink" class="nav-link" routerLinkActive="active">{{route.tabName}}</a>
         </ng-container>
     </nav>
 

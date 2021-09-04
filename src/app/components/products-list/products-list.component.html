@@ -3,7 +3,7 @@
 
     <div class="card-container my-3" *ngIf="productsList && productsList.length > 0; else elseBlock">
         <ng-container *ngFor="let product of productsList  | slice:0:limit">
-            <product-card [productItem]="product"></product-card>
+            <product-card [productItem]="product" (openProductDetails)="openProductDetails($event)"></product-card>
         </ng-container>
     </div>
 
@@ -14,3 +14,5 @@
     <button *ngIf="isMoreAvailable" type="button" (click)="showMoreOptions()" class="btn mb-4 py-1 more-options-btn">{{buttonLabel}}</button>
 
 </section>
+
+<product-details-modal *ngIf="selectedProductId" [selectedProductId]="selectedProductId" [flagToTriggerChangeEvent]="flagToTriggerChangeEvent"></product-details-modal>

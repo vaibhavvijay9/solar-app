@@ -11,13 +11,16 @@ export class ProductsListComponent implements OnInit {
   limit: number = 3;
   buttonLabel: string = "See More Options";
   isMoreAvailable: boolean;
-
+  selectedProductId: number;
+  flagToTriggerChangeEvent = 0;
 
   constructor() { }
 
 
   ngOnChanges() {
     if(this.productsList && this.productsList.length <= this.limit)
+      this.isMoreAvailable = false;
+    else if(this.productsList && this.productsList.length == 0)
       this.isMoreAvailable = false;
     else
       this.isMoreAvailable = true;
@@ -36,6 +39,12 @@ export class ProductsListComponent implements OnInit {
       this.limit = this.productsList.length;
       this.buttonLabel = "See Less";
     }
+  }
+
+  
+  openProductDetails(id) {
+    this.flagToTriggerChangeEvent = this.flagToTriggerChangeEvent + 1;
+    this.selectedProductId = id;
   }
 
 }

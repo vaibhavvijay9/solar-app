@@ -12,6 +12,9 @@ import { TabViewComponent } from './components/tab-view/tab-view.component';
 import { ProductProcessComponent } from './components/product-process/product-process.component';
 
 import { FormsModule } from '@angular/forms';
+import { ProductDetailsModalComponent } from './components/product-details-modal/product-details-modal.component';
+import { ProductOverviewComponent } from './components/product-overview/product-overview.component';
+import { ProductSpecsComponent } from './components/product-specs/product-specs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,10 @@ import { FormsModule } from '@angular/forms';
     ProductWorkingComponent,
     ProductCardComponent,
     TabViewComponent,
-    ProductProcessComponent
+    ProductProcessComponent,
+    ProductDetailsModalComponent,
+    ProductOverviewComponent,
+    ProductSpecsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any;
-
 @Component({
   selector: 'product-working',
   templateUrl: './product-working.component.html',
@@ -14,7 +12,7 @@ export class ProductWorkingComponent implements OnInit {
 
   ngOnInit(): void {
     this.routeInfo = [
-      {tabName: 'Process', tabLink: 'process', isActive: true}
+      {tabName: 'Process', tabLink: 'process'}
     ]
   }
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'product-card',
@@ -8,14 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductCardComponent implements OnInit {
 
   @Input() productItem: any;
+  @Output() public openProductDetails = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void { }
 
 
-  openDetailsModal(item){
-    
+  openDetailsModal(modelId){
+    this.openProductDetails.emit(modelId);
   }
 
 }

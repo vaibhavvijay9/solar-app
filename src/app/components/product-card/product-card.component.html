@@ -1,21 +1,23 @@
-<div class="product rounded">
+<div class="product rounded shadow">
     <header class="card__header d-flex justify-content-between align-items-center p-2 rounded-top">
       <div>
         <h1 class="product__manufacturer-name mb-0">{{productItem.manufacturer_name}}</h1>
-        <span class="product__name">Pro Prestige 50 LeakGuar</span>
+        <span>Pro Prestige 50 LeakGuar</span>
       </div>
       <div>
-        <label class="product__rating">3.4 of</label>
-        <img class="product__rating-info mx-2" src="assets/info-tooltip.svg" alt="Info Icon">
-        <img class="product__rating-logo rounded" src="assets/Energy_Star_logo.svg.png" width="40px" height="32px" alt="Energy Star logo">
+        <label>3.4 of</label>
+        <img class="mx-2" src="assets/info-tooltip.svg" alt="Info Icon">
+        <img class="rounded" src="assets/Energy_Star_logo.svg.png" width="40px" height="32px" alt="Energy Star logo">
       </div>
     </header>
 
     <div class="card-body position-relative pb-4">
       <div class=" row img-and-highlight">
-        <img src="assets/img2.png" class="col-xl-4" alt="Product">
-        <ul class="col-xl-7 offset-xl-1 highlight-list p-2">
-          <li *ngFor="let highlight of productItem.est_highlight" class="mb-2">{{highlight}}</li>
+        <div class="col-xl-4 col-4">
+          <img src="assets/img2.png" alt="Product">
+        </div>
+        <ul class="col-xl-7 col-7 offset-xl-1 highlight-list p-2">
+          <li *ngFor="let highlight of productItem.est_highlight; let lastItem = last;" [class.mb-2]="!lastItem">{{highlight}}</li>
         </ul>
       </div>
       
@@ -32,7 +34,7 @@
         <div class="tax-price ms-3 d-flex justify-content-between">
           <span>
             Federal Tax Credit
-            <img class="product__rating-info mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
+            <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
           </span>
           <span class="fw-normal"> ----------- </span>
           <span>{{'-300' | currency}}</span>
@@ -41,7 +43,7 @@
         <div class="tax-price ms-3 d-flex justify-content-between">
           <span>
             Utility Incentives
-            <img class="product__rating-info mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
+            <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
           </span>
           <span class="fw-normal"> ------------ </span>
           <span>{{'-1000' | currency}}</span>
@@ -50,7 +52,7 @@
         <div class="equipment-cost d-flex justify-content-between">
           <span>
             Equipment Cost
-            <img class="product__rating-info mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
+            <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
           </span>
           <span class="fw-normal"> ---------- </span>
           <span class="equipment-cost__amount">{{productItem.netCost | currency}}</span>
@@ -63,7 +65,7 @@
 
         <button type="button" class="btn btn-primary d-flex m-auto white-font mb-4">Get Install Quote</button>
 
-        <button type="button" (click)="openDetailsModal(productItem)" class="btn position-absolute bottom-0 start-0 w-100 rounded-0 rounded-bottom view-more">
+        <button type="button" (click)="openDetailsModal(productItem.model_id)" class="btn position-absolute bottom-0 start-0 w-100 rounded-0 rounded-bottom view-more">
           View More Details
         </button>
 
