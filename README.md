@@ -19,6 +19,8 @@ Please visit [https://solar-assignment.netlify.app/](https://solar-assignment.ne
 - _View More Details_ - Opens modal with product details.
   - Previous/Next
   - Tab : Overview and Specifications
+- Responsive
+
 
 **Note -** Dynamic data is shown wherever it can be, using the API result.
 
