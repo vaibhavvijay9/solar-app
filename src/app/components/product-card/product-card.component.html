@@ -6,15 +6,15 @@
       </div>
       <div>
         <label>3.4 of</label>
-        <img class="mx-2" src="assets/info-tooltip.svg" alt="Info Icon">
-        <img class="rounded" src="assets/Energy_Star_logo.svg.png" width="40px" height="32px" alt="Energy Star logo">
+        <img class="mx-2" src="assets/info-tooltip.svg" alt="Info Icon" width="10px" height="auto">
+        <img class="rounded" src="assets/Energy_Star_logo.svg.png" width="40px" height="40px" alt="Energy Star logo">
       </div>
     </header>
 
     <div class="card-body position-relative pb-4">
       <div class=" row img-and-highlight">
         <div class="col-xl-4 col-4">
-          <img src="assets/img2.png" alt="Product">
+          <img src="assets/img2.png" alt="Product" width="70px" height="auto">
         </div>
         <ul class="col-xl-7 col-7 offset-xl-1 highlight-list p-2">
           <li *ngFor="let highlight of productItem.est_highlight; let lastItem = last;" [class.mb-2]="!lastItem">{{highlight}}</li>
@@ -34,7 +34,7 @@
         <div class="tax-price ms-3 d-flex justify-content-between">
           <span>
             Federal Tax Credit
-            <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
+            <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon" width="10px" height="auto">
           </span>
           <span class="fw-normal"> ----------- </span>
           <span>{{'-300' | currency}}</span>
@@ -43,7 +43,7 @@
         <div class="tax-price ms-3 d-flex justify-content-between">
           <span>
             Utility Incentives
-            <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
+            <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon" width="10px" height="auto">
           </span>
           <span class="fw-normal"> ------------ </span>
           <span>{{'-1000' | currency}}</span>
@@ -52,7 +52,7 @@
         <div class="equipment-cost d-flex justify-content-between">
           <span>
             Equipment Cost
-            <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon">
+            <img class="mx-1" src="assets/info-tooltip.svg" alt="Info Icon" width="10px" height="auto">
           </span>
           <span class="fw-normal"> ---------- </span>
           <span class="equipment-cost__amount">{{productItem.netCost | currency}}</span>
