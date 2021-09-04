@@ -11,7 +11,9 @@
         Your Project qualifies you for <span class="fw-bold">incentives!</span>
       </div>
 
-      <products-list class="mb-2" [productsList]="filteredList"></products-list>
+      <div #productsListRef>
+        <products-list class="mb-2" [productsList]="filteredList"></products-list>
+      </div>
       
       <product-working></product-working>
     </main>
